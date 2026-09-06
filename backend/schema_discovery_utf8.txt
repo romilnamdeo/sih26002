@@ -1,0 +1,139 @@
+﻿       table_name        |       column_name       |          data_type          
+-------------------------+-------------------------+-----------------------------
+ accessibility_incidents | incident_id             | integer
+ accessibility_incidents | incident_type           | character varying
+ accessibility_incidents | road_id                 | integer
+ accessibility_incidents | segment_id              | integer
+ accessibility_incidents | location_id             | integer
+ accessibility_incidents | severity                | character varying
+ accessibility_incidents | description             | text
+ accessibility_incidents | reported_by_user_id     | integer
+ accessibility_incidents | status                  | character varying
+ accessibility_incidents | reported_at             | timestamp without time zone
+ accessibility_incidents | resolved_at             | timestamp without time zone
+ ai_predictions          | prediction_id           | bigint
+ ai_predictions          | prediction_type         | character varying
+ ai_predictions          | target_type             | character varying
+ ai_predictions          | target_id               | integer
+ ai_predictions          | predicted_value         | numeric
+ ai_predictions          | confidence_pct          | numeric
+ ai_predictions          | prediction_window_start | timestamp without time zone
+ ai_predictions          | prediction_window_end   | timestamp without time zone
+ ai_predictions          | model_version           | character varying
+ ai_predictions          | created_at              | timestamp without time zone
+ alerts                  | alert_id                | integer
+ alerts                  | alert_type              | character varying
+ alerts                  | severity                | character varying
+ alerts                  | title                   | character varying
+ alerts                  | message                 | text
+ alerts                  | related_incident_id     | integer
+ alerts                  | district_id             | integer
+ alerts                  | issued_at               | timestamp without time zone
+ alerts                  | expires_at              | timestamp without time zone
+ districts               | district_id             | integer
+ districts               | state_id                | integer
+ districts               | district_name           | character varying
+ districts               | hq_location             | character varying
+ locations               | location_id             | integer
+ locations               | district_id             | integer
+ locations               | location_name           | character varying
+ locations               | location_type           | character varying
+ locations               | latitude                | numeric
+ locations               | longitude               | numeric
+ locations               | elevation_m             | numeric
+ locations               | population              | integer
+ locations               | terrain_type            | character varying
+ locations               | accessibility_index     | numeric
+ locations               | connectivity_status     | character varying
+ locations               | last_updated            | timestamp without time zone
+ notifications           | notification_id         | bigint
+ notifications           | user_id                 | integer
+ notifications           | alert_id                | integer
+ notifications           | channel                 | character varying
+ notifications           | sent_at                 | timestamp without time zone
+ notifications           | is_read                 | boolean
+ road_segments           | segment_id              | integer
+ road_segments           | road_id                 | integer
+ road_segments           | sequence_no             | integer
+ road_segments           | latitude                | numeric
+ road_segments           | longitude               | numeric
+ road_segments           | elevation_m             | numeric
+ road_segments           | condition_rating        | smallint
+ road_segments           | landslide_risk_score    | numeric
+ road_segments           | last_inspected          | date
+ roads                   | road_id                 | integer
+ roads                   | road_name               | character varying
+ roads                   | road_type               | character varying
+ roads                   | start_location_id       | integer
+ roads                   | end_location_id         | integer
+ roads                   | length_km               | numeric
+ roads                   | surface_type            | character varying
+ roads                   | is_seasonal             | boolean
+ roads                   | managing_authority      | character varying
+ roads                   | created_at              | timestamp without time zone
+ roles                   | role_id                 | integer
+ roles                   | role_name               | character varying
+ route_waypoints         | waypoint_id             | integer
+ route_waypoints         | route_id                | integer
+ route_waypoints         | sequence_no             | integer
+ route_waypoints         | road_id                 | integer
+ route_waypoints         | location_id             | integer
+ route_waypoints         | latitude                | numeric
+ route_waypoints         | longitude               | numeric
+ route_waypoints         | eta                     | timestamp without time zone
+ routes                  | route_id                | integer
+ routes                  | shipment_id             | integer
+ routes                  | generated_by            | character varying
+ routes                  | total_distance_km       | numeric
+ routes                  | estimated_duration_min  | integer
+ routes                  | risk_score              | numeric
+ routes                  | route_status            | character varying
+ routes                  | created_at              | timestamp without time zone
+ shipments               | shipment_id             | integer
+ shipments               | origin_location_id      | integer
+ shipments               | destination_location_id | integer
+ shipments               | vehicle_id              | integer
+ shipments               | driver_user_id          | integer
+ shipments               | requested_by_user_id    | integer
+ shipments               | cargo_description       | text
+ shipments               | weight_kg               | numeric
+ shipments               | priority                | character varying
+ shipments               | status                  | character varying
+ shipments               | scheduled_departure     | timestamp without time zone
+ shipments               | actual_departure        | timestamp without time zone
+ shipments               | estimated_arrival       | timestamp without time zone
+ shipments               | actual_arrival          | timestamp without time zone
+ shipments               | created_at              | timestamp without time zone
+ states                  | state_id                | integer
+ states                  | state_name              | character varying
+ states                  | state_code              | character varying
+ states                  | capital                 | character varying
+ states                  | terrain_summary         | character varying
+ users                   | user_id                 | integer
+ users                   | full_name               | character varying
+ users                   | phone_number            | character varying
+ users                   | email                   | character varying
+ users                   | password_hash           | character varying
+ users                   | role_id                 | integer
+ users                   | district_id             | integer
+ users                   | preferred_language      | character varying
+ users                   | is_verified             | boolean
+ users                   | created_at              | timestamp without time zone
+ vehicles                | vehicle_id              | integer
+ vehicles                | registration_no         | character varying
+ vehicles                | vehicle_type            | character varying
+ vehicles                | capacity_kg             | numeric
+ vehicles                | terrain_suitability     | character varying
+ vehicles                | current_driver_user_id  | integer
+ vehicles                | status                  | character varying
+ weather_data            | weather_id              | bigint
+ weather_data            | location_id             | integer
+ weather_data            | recorded_at             | timestamp without time zone
+ weather_data            | temperature_c           | numeric
+ weather_data            | rainfall_mm             | numeric
+ weather_data            | humidity_pct            | numeric
+ weather_data            | wind_speed_kmph         | numeric
+ weather_data            | visibility_km           | numeric
+ weather_data            | weather_alert           | character varying
+(135 rows)
+
